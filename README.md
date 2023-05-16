@@ -2,6 +2,31 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+### Planetscale
+
+First, install the planetscale CLI:
+
+```bash
+brew install planetscale/tap/pscale
+```
+
+If you haven't already, create a new branch in your planetscale project
+
+```bash
+pscale branch create <PROJECT_NAME> <BRANCH_NAME>
+```
+
+Next, start a connection to your databases branch.
+
+```bash
+# you can use whatever port you'd like, 3309 is just likely to not be in use.
+pscale connect <PROJECT_NAME> <BRANCH_NAME> --port 3309
+```
+
+Finally, update your `DATABASE_URL` in the `.env` to include the project name and the port you used.
+
+### Next
+
 First, run the development server:
 
 ```bash
